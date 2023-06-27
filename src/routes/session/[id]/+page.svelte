@@ -59,8 +59,7 @@
 
 <h1>Welcome to AskLive</h1>
 {#if session}
-	<p>Secret: {session.secretHex}</p>
-	<ul transition:fly={{ y: 40, duration: 2000 }}>
+	<ul>
 		{#each messages as message}
 			<li transition:fly={{ y: 40, duration: 2000 }}>
 				<code>{message.id}</code>
