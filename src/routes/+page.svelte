@@ -20,7 +20,7 @@
 </script>
 
 <center>
-    <div class="centered"><a href="/"><Logo size={96}></Logo></a></div>
+    <div class="centered"><a href="/"><Logo size={256}></Logo></a></div>
 
     <p class="centered"></p>
 
