@@ -106,7 +106,7 @@ export interface PostMessage {
 	type: 'post';
 	message: string;
 	vote: number;
-    removed?: true
+	removed?: true;
 }
 
 interface VoteMessage {
@@ -115,8 +115,8 @@ interface VoteMessage {
 }
 
 interface RemoveMessage {
-    type: 'remove'
-    id: string;
+	type: 'remove';
+	id: string;
 }
 
 type Message = PostMessage | VoteMessage | RemoveMessage;
@@ -144,17 +144,17 @@ function handleMessage(message: Message, id: string, messages: MessageContainer)
 					vote: oldMessage.vote + 1
 				};
 			}
-            return
+			return;
 		}
-        case 'remove':
-            if (messages[message.id]) {
+		case 'remove':
+			if (messages[message.id]) {
 				const oldMessage = messages[message.id];
 				messages[message.id] = {
 					...oldMessage,
-					removed: true,
+					removed: true
 				};
 			}
-            return
+			return;
 	}
 }
 
@@ -188,7 +188,7 @@ export async function admin(
 	readMessages.forEach((jsonMessage) => {
 		const id = secp.etc.bytesToHex(sha256(jsonMessage));
 		const message = JSON.parse(jsonMessage) as Message;
-        console.log(message, id, messages)
+		console.log(message, id, messages);
 		handleMessage(message, id, messages);
 	});
 
@@ -318,7 +318,11 @@ export async function vote(secretHex: string, id: string, waku: LightNode | unde
 	await send(waku, topicHex, data);
 }
 
-export async function remove(secretHex: string, id: string, waku: LightNode | undefined = undefined) {
+export async function remove(
+	secretHex: string,
+	id: string,
+	waku: LightNode | undefined = undefined
+) {
 	const secret = secp.etc.hexToBytes(secretHex);
 	const topic = sha256(secret);
 	const topicHex = secp.etc.bytesToHex(topic);

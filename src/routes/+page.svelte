@@ -20,39 +20,38 @@
 </script>
 
 <center>
-    <div class="centered"><a href="/"><Logo size={256}></Logo></a></div>
+	<div class="centered"><a href="/"><Logo size={256} /></a></div>
 
-    <p class="centered"></p>
+	<p class="centered" />
 
 	<button on:click={startSession}>Start new session</button>
 
 	<p>or</p>
 
-    <form>
-        <input type="text" bind:value={sessionId} placeholder="Enter session id here"/>
-        <button on:click={joinSession}>Join session</button>    
-    </form>
+	<form>
+		<input type="text" bind:value={sessionId} placeholder="Enter session id here" />
+		<button on:click={joinSession}>Join session</button>
+	</form>
 </center>
 
 <style>
-    .centered {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    input {
-        padding: 0.5em;
-        flex: 0.4;
-    }
-    button {
-        padding: 0.5em;
-        margin-left: 0.5em;
-        flex: 0.1;
-    }
-    form {
-        display: flex;
-        margin: 0.5em;
-        justify-content: center;
-    }
-
+	.centered {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	input {
+		padding: 0.5em;
+		flex: 0.4;
+	}
+	button {
+		padding: 0.5em;
+		margin-left: 0.5em;
+		flex: 0.1;
+	}
+	form {
+		display: flex;
+		margin: 0.5em;
+		justify-content: center;
+	}
 </style>

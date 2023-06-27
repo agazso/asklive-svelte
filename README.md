@@ -2,8 +2,7 @@
 
 Live Q&A application - ask anonymous questions
 
-![screenshot](<screenshot.png>)
-
+![screenshot](screenshot.png)
 
 ## Installing
 
